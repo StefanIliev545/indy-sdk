@@ -1,11 +1,11 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 RUN useradd -ms /bin/bash indy
 
 # Install environment
 RUN apt-get update -y && apt-get install -y \
 	wget \
-	python3.5 \
+	python3.6 \
 	python3-pip \
 	python-setuptools \
 	apt-transport-https \
@@ -16,8 +16,8 @@ WORKDIR /home/indy
 
 RUN pip3 install -U \
 	pip \
-	ipython-notebook \
-      ipython==7.9 \
+	notebook \
+	ipython==7.9 \
 	setuptools \
 	jupyter \
 	python3-indy==1.11.0
